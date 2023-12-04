@@ -39,8 +39,7 @@ func main() {
 	max_name := ""
 	min_date := ""
 	min_name := ""
-	// URL вашего API
-	startDate := time.Date(2023, time.December, 1, 0, 0, 0, 0, time.UTC)
+	startDate := time.Now()
 	for i := 0; i < 90; i++ {
 		startDate = startDate.AddDate(0, 0, -1)
 		date := startDate.Format("02/01/2006")
@@ -76,7 +75,6 @@ func main() {
 			if err != nil {
 				fmt.Println(err.Error())
 			}
-			mid += val
 			if val > max {
 				max = val
 				max_date = valCurs.Date
